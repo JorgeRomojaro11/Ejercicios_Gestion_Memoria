@@ -1,8 +1,21 @@
 cmake_minimum_required(VERSION 3.17)
-project(MyProject)
+project(Ejercicio_Gestion_Memoria)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(MyProject main.cpp)
+find_library(KERNEL32_LIBRARY kernel32)
+find_library(USER32_LIBRARY user32)
 
-target_link_libraries(MyProject PRIVATE kernel32 user32)
+if(NOT KERNEL32_LIBRARY)
+    message(FATAL_ERROR "No se pudo encontrar la biblioteca kernel32")
+endif()
+
+if(NOT USER32_LIBRARY)
+    message(FATAL_ERROR "No se pudo encontrar la biblioteca user32")
+endif()
+
+target_link_libraries(${Ejercicio_Gestion_Memoria} PRIVATE ${KERNEL32_LIBRARY} ${USER32_LIBRARY})
+
+add_executable(${Ejercicio_Gestion_Memoria} main.cpp)
+
+

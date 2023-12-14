@@ -165,7 +165,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=MyProject
+CMAKE_PROJECT_NAME:STATIC=Ejercicio_Gestion_Memoria
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/ranlib.exe
@@ -248,6 +248,27 @@ CMAKE_STRIP:FILEPATH=C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/str
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
+Ejercicio_Gestion_Memoria_BINARY_DIR:STATIC=C:/Users/Jorge Romojaro/Documents/GitHub/Ejercicios_Gestion_Memoria/cmake-build-debug
+
+//Value Computed by CMake
+Ejercicio_Gestion_Memoria_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+Ejercicio_Gestion_Memoria_SOURCE_DIR:STATIC=C:/Users/Jorge Romojaro/Documents/GitHub/Ejercicios_Gestion_Memoria
+
+//Value Computed by CMake
+Ejercicios_Gestion_Memoria_BINARY_DIR:STATIC=C:/Users/Jorge Romojaro/Documents/GitHub/Ejercicios_Gestion_Memoria/cmake-build-debug
+
+//Value Computed by CMake
+Ejercicios_Gestion_Memoria_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+Ejercicios_Gestion_Memoria_SOURCE_DIR:STATIC=C:/Users/Jorge Romojaro/Documents/GitHub/Ejercicios_Gestion_Memoria
+
+//Path to a library.
+KERNEL32_LIBRARY:FILEPATH=KERNEL32_LIBRARY-NOTFOUND
+
+//Value Computed by CMake
 MyProject_BINARY_DIR:STATIC=C:/Users/Jorge Romojaro/Documents/GitHub/Ejercicios_Gestion_Memoria/cmake-build-debug
 
 //Value Computed by CMake
@@ -264,6 +285,9 @@ Project_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 Project_SOURCE_DIR:STATIC=C:/Users/Jorge Romojaro/Documents/GitHub/Ejercicios_Gestion_Memoria
+
+//Path to a library.
+USER32_LIBRARY:FILEPATH=USER32_LIBRARY-NOTFOUND
 
 
 ########################
