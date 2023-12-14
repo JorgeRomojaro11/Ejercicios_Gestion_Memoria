@@ -1,6 +1,1 @@
-"C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S "C:\Users\Jorge Romojaro\Documents\GitHub\Ejercicios_Gestion_Memoria" -B "C:\Users\Jorge Romojaro\Documents\GitHub\Ejercicios_Gestion_Memoria\cmake-build-debug"
-CMake Error at CMakeLists.txt:10 (message):
-  No se pudo encontrar la biblioteca kernel32
-
-
--- Configuring incomplete, errors occurred!
+CMakeLists.txt not found in C:\Users\Jorge Romojaro\Documents\GitHub\Ejercicios_Gestion_Memoria Select CMakeLists.txt

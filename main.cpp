@@ -1,13 +1,12 @@
 #include <windows.h>
-#include <tchar.h>
 #include <stdio.h>
-#include <strsafe.h>
-
+#include <tchar.h>
 #define SIZE 4096
 
 int _tmain() {
     HANDLE hMapFile;
     LPCTSTR pBuf;
+
 
     hMapFile = CreateFileMapping(
             INVALID_HANDLE_VALUE,
@@ -15,42 +14,50 @@ int _tmain() {
             PAGE_READWRITE,
             0,
             SIZE,
-            L"MySharedMemory");
+            _T("MemoriaCompartida"));
+
     if (hMapFile == NULL) {
-        _tprintf(_T("Could not create file mapping object (%d)\n"), GetLastError());
+        _tprintf(_T("No se puede crear el archivo de mapeo (%d).\n"),
+                 GetLastError());
         return 1;
     }
-    pBuf = (LPTSTR)MapViewOfFile(hMapFile, FILE_MAP_ALL_ACCESS, 0, 0, SIZE);
+    pBuf = (LPTSTR) MapViewOfFile(hMapFile,
+                                  FILE_MAP_ALL_ACCESS,
+                                  0,
+                                  0,
+                                  SIZE);
     if (pBuf == NULL) {
-        _tprintf(_T("Could not map view of file (%d)\n"), GetLastError());
+        _tprintf(_T("No se puede mapear la vista de archivo (%d).\n"),
+                 GetLastError());
 
         CloseHandle(hMapFile);
+
         return 1;
     }
+    CopyMemory((PVOID)pBuf, _T("¡Hola desde el proceso padre!"),
+               (_tcslen(_T("¡Hola desde el proceso padre!")) * sizeof(TCHAR)));
+
     STARTUPINFO si;
     PROCESS_INFORMATION pi;
 
     ZeroMemory(&si, sizeof(si));
     si.cb = sizeof(si);
     ZeroMemory(&pi, sizeof(pi));
-    if (!CreateProcess(
-            NULL,
-            _T("child.exe"),
-            NULL,
-            NULL,
-            FALSE,
-            0,
-            NULL,
-            NULL,
-            &si,
-            &pi)) {
-        _tprintf(_T("CreateProcess failed (%d)\n"), GetLastError());
 
-        UnmapViewOfFile(pBuf);
-        CloseHandle(hMapFile);
+    if (!CreateProcess(_T("Ruta al proceso hijo ejecutable"),
+                       NULL,
+                       NULL,
+                       NULL,
+                       FALSE,
+                       0,
+                       NULL,
+                       NULL,
+                       &si,
+                       &pi))
+    {
+        printf("Error al crear el proceso(%d).\n", GetLastError());
         return 1;
     }
-    StringCchCopy((LPTSTR)pBuf, SIZE / sizeof(TCHAR), _T("Hello, child process!"));
 
     WaitForSingleObject(pi.hProcess, INFINITE);
 
@@ -62,5 +69,6 @@ int _tmain() {
 
     return 0;
 }
+
 
 
