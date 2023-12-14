@@ -8,8 +8,8 @@ int _tmain() {
     HANDLE hMapFile;
     LPCTSTR pBuf;
     hMapFile = OpenFileMapping(
-            FILE_MAP_ALL_ACCESS,   // access
-            FALSE,                 // do not inherit the name
+            FILE_MAP_ALL_ACCESS,
+            FALSE,
             L"MySharedMemory");
 
     if (hMapFile == NULL) {
