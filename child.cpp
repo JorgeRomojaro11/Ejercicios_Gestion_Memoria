@@ -4,4 +4,6 @@
 #include <string.h>
 #include <unistd.h>
 
+#define SIZE 4096
+
 
