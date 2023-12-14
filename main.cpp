@@ -33,5 +33,34 @@ int _tmain() {
     ZeroMemory(&si, sizeof(si));
     si.cb = sizeof(si);
     ZeroMemory(&pi, sizeof(pi));
+    if (!CreateProcess(
+            NULL,
+            _T("child.exe"), // Cambia "child.exe" al nombre real de tu ejecutable del proceso hijo
+            NULL,
+            NULL,
+            FALSE,
+            0,
+            NULL,
+            NULL,
+            &si,
+            &pi)) {
+        _tprintf(_T("CreateProcess failed (%d)\n"), GetLastError());
+
+        UnmapViewOfFile(pBuf);
+        CloseHandle(hMapFile);
+        return 1;
+    }
+    StringCchCopy((LPTSTR)pBuf, SIZE / sizeof(TCHAR), _T("Hello, child process!"));
+
+    WaitForSingleObject(pi.hProcess, INFINITE);
+
+    CloseHandle(pi.hProcess);
+    CloseHandle(pi.hThread);
+
+    UnmapViewOfFile(pBuf);
+    CloseHandle(hMapFile);
+
+    return 0;
+}
 
 
