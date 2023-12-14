@@ -15,4 +15,20 @@ int _tmain() {
     if (hMapFile == NULL) {
         _tprintf(_T("Could not open file mapping object (%d)\n"), GetLastError());
         return 1;
+    }
+
+    pBuf = (LPTSTR)MapViewOfFile(hMapFile, FILE_MAP_ALL_ACCESS, 0, 0, SIZE);
+    if (pBuf == NULL) {
+        _tprintf(_T("Could not map view of file (%d)\n"), GetLastError());
+
+        CloseHandle(hMapFile);
+        return 1;
+    }
+    _tprintf(_T("Child reads: %s\n"), pBuf);
+
+    UnmapViewOfFile(pBuf);
+    CloseHandle(hMapFile);
+
+    return 0;
+}
 
