@@ -27,4 +27,11 @@ int _tmain() {
         CloseHandle(hMapFile);
         return 1;
     }
+    STARTUPINFO si;
+    PROCESS_INFORMATION pi;
+
+    ZeroMemory(&si, sizeof(si));
+    si.cb = sizeof(si);
+    ZeroMemory(&pi, sizeof(pi));
+
 
