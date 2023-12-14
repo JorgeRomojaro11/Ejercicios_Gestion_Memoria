@@ -35,7 +35,7 @@ int _tmain() {
     ZeroMemory(&pi, sizeof(pi));
     if (!CreateProcess(
             NULL,
-            _T("child.exe"), // Cambia "child.exe" al nombre real de tu ejecutable del proceso hijo
+            _T("child.exe"),
             NULL,
             NULL,
             FALSE,
