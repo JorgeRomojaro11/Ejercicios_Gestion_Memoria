@@ -12,3 +12,9 @@ int main() {
         perror("mmap");
         exit(EXIT_FAILURE);
     }
+    printf("Child reads: %s\n", shared_memory);
+
+    munmap(shared_memory, SIZE);
+
+    return 0;
+}
