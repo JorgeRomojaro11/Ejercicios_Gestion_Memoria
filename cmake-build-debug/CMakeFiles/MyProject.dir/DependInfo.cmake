@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/Jorge Romojaro/Documents/GitHub/Ejercicios_Gestion_Memoria/child.cpp" "CMakeFiles/MyProject.dir/child.cpp.obj" "gcc" "CMakeFiles/MyProject.dir/child.cpp.obj.d"
   "C:/Users/Jorge Romojaro/Documents/GitHub/Ejercicios_Gestion_Memoria/main.cpp" "CMakeFiles/MyProject.dir/main.cpp.obj" "gcc" "CMakeFiles/MyProject.dir/main.cpp.obj.d"
   )
 

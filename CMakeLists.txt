@@ -3,5 +3,6 @@ project(MyProject)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(MyProject main.cpp
-        child.cpp)
+add_executable(MyProject main.cpp)
+
+target_link_libraries(MyProject PRIVATE kernel32 user32)

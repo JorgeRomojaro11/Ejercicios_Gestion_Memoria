@@ -80,12 +80,12 @@ clean: CMakeFiles/MyProject.dir/clean
 CMakeFiles/MyProject.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyProject.dir\build.make CMakeFiles/MyProject.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyProject.dir\build.make CMakeFiles/MyProject.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Jorge Romojaro\Documents\GitHub\Ejercicios_Gestion_Memoria\cmake-build-debug\CMakeFiles" --progress-num=1,2,3 "Built target MyProject"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Jorge Romojaro\Documents\GitHub\Ejercicios_Gestion_Memoria\cmake-build-debug\CMakeFiles" --progress-num=1,2 "Built target MyProject"
 .PHONY : CMakeFiles/MyProject.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MyProject.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Jorge Romojaro\Documents\GitHub\Ejercicios_Gestion_Memoria\cmake-build-debug\CMakeFiles" 3
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Jorge Romojaro\Documents\GitHub\Ejercicios_Gestion_Memoria\cmake-build-debug\CMakeFiles" 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/MyProject.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Jorge Romojaro\Documents\GitHub\Ejercicios_Gestion_Memoria\cmake-build-debug\CMakeFiles" 0
 .PHONY : CMakeFiles/MyProject.dir/rule
