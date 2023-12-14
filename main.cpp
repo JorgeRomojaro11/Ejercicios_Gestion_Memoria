@@ -23,3 +23,8 @@ int main() {
         printf("Child reads: %s\n", shared_memory);
         munmap(shared_memory, SIZE);
         exit(EXIT_SUCCESS);
+    } else {
+        strcpy(shared_memory, "Hello, child process!");
+        wait(NULL);
+        munmap(shared_memory, SIZE);
+    }
